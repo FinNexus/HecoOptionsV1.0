@@ -1,8 +1,15 @@
 pragma solidity =0.5.16;
 import "./interfaces/IFNXOracle.sol";
 import "./modules/Operator.sol";
+
+interface OracleAdapter{
+    function getPrice() external view returns (uint256);
+}
+
 contract FNXOracle is IFNXOracle,Operator {
     mapping(uint256 => uint256) internal priceMap;
+    //token->cal contract address
+    mapping(address => address) internal OracleAdapterMap;
     /**
       * @notice set price of an asset
       * @dev function to set price for an asset
@@ -89,7 +96,11 @@ contract FNXOracle is IFNXOracle,Operator {
   * @return uint mantissa of asset price (scaled by 1e8) or zero if unset or contract paused
   */
     function getPrice(address asset) public view returns (uint256) {
-        return _getPriceInfo(uint256(asset));
+        if(OracleAdapterMap[asset]!=address(0)) {
+            return OracleAdapter(OracleAdapterMap[asset]).getPrice();
+        } else {
+            return _getPriceInfo(uint256(asset));
+        }
     }
     function getUnderlyingPrice(uint256 underlying) public view returns (uint256) {
         return _getPriceInfo(underlying);
