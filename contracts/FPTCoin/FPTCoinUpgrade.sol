@@ -8,7 +8,7 @@ import "../modules/SafeMath.sol";
  * @dev ERC20 token. Its inside value is collatral pool net worth.
  *
  */
-contract FPTCoinUpgrade is SharedCoin {
+contract FPTCoin is SharedCoin {
     using SafeMath for uint256;
     mapping (address => bool) internal timeLimitWhiteList;
     constructor (address minePoolAddr,string memory tokenName)public{
