@@ -24,7 +24,7 @@ contract FPTCoin is SharedCoin {
         SharedCoin.initialize();
     }
     function update() onlyOwner public{
-        timeLimitWhiteList[0xf1FF936B72499382983a8fBa9985C41cB80BE17D] = true;
+        //timeLimitWhiteList[0xf1FF936B72499382983a8fBa9985C41cB80BE17D] = true;
     }
     /**
      * @dev Retrieve user's start time for burning. 
