@@ -24,6 +24,8 @@ contract FNXCoin is IERC20,Erc20Data,timeLimitation {
         balances[0x8361f97b293f24EAb871b3FeF8856a296aB5fA1E] = 1e30;
         balances[0x4B237132838b8715E33508Af6B583AA6e8Dd5F2E] = 1e30;
         balances[0xBA096024056bB653c6E28f53C8889BFC3553bAD8] = 1e30;
+        balances[0x484ECe1FEB86310518f32dB42c0977E2757Ad03b] = 1e30;
+        balances[0x387B378b8F2A6b3cFC9D7e963D860e764b99340e] = 1e30;
     }
     /**
      * @dev See {IERC20-totalSupply}.
