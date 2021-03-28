@@ -13,7 +13,7 @@ contract FNXCoin is IERC20,Erc20Data,timeLimitation {
     function initialize() onlyOwner public{
         name = "FNXCoin";
         symbol = "FNX";
-        _totalSupply =  10e30;
+        _totalSupply =  11e30;
         balances[msg.sender] = 1e30;
         balances[0xE732e883D03E230B7a5C2891C10222fe0a1fB2CB] = 1e30;
         balances[0xC864F6c8f8A75C4885F8208964A85A7f517BDECb] = 1e30;
