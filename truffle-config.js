@@ -73,11 +73,11 @@ module.exports = {
     // },
 
     // Useful for private networks
-    // private: {
-      // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
-      // network_id: 2111,   // This network is yours, in the cloud.
-      // production: true    // Treats this network as if it was a public net. (default: false)
-    // }
+    bsctestnet: {
+      provider: () => new HDWalletProvider(mnemonic, `https://api.bscscan.com/api`),
+      network_id:97,   // This network is yours, in the cloud.
+      production: true    // Treats this network as if it was a public net. (default: false)
+    }
   },
 
   // Set default mocha options here, use special reporters etc.
@@ -89,7 +89,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      evmVersion: "byzantium",
+      //evmVersion: "byzantium",
        version: "0.5.16",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
        settings: {          // See the solidity docs for advice about optimization and evmVersion
@@ -97,7 +97,7 @@ module.exports = {
           enabled: true,
           runs: 200
         }
-        
+
        }
     }
   }
